@@ -1,0 +1,22 @@
+.toTopButton {
+  position: fixed;
+  bottom: 50px;
+  right: 10px;
+  z-index: 9999;
+  width: 40px;
+  height: 40px;
+  background-color: rgb(184,31,50);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .iconStyle {
+    font-size: 21px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      color: #611821;
+    }
+  }
+}
+

@@ -1,0 +1,71 @@
+.container {
+  margin: 0 auto;
+  .hoverCircle {
+    position: relative;
+    &:after {
+      display: block;
+      content: "";
+      width: 156px;
+      height: 156px;
+      background: url("https://gongcha.com.vn/wp-content/themes/theme/images/p-hover.png")
+        0 0 no-repeat;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 9;
+      opacity: 0;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    &:hover {
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+  .listProduct:nth-child(3n + 1) {
+    & > div:last-child {
+      position: relative;
+      left: 100%;
+    }
+  }
+  .listProduct:nth-child(3n) {
+    & > div:last-child {
+      position: relative;
+      right: 100%;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1200px;
+  }
+}
+@media (max-width: 767px) {
+  .container {
+    .listProduct:nth-child(odd) {
+      & > div:last-child {
+        position: relative;
+        left: 50%;
+      }
+    }
+    .listProduct:nth-child(even) {
+      & > div:last-child {
+        position: relative;
+        right: 50%;
+      }
+    }
+  }
+}

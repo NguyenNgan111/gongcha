@@ -1,0 +1,19 @@
+.form_control {
+  label {
+    display: inline-block;
+    width: 200px;
+  }
+  input {
+    width: 300px;
+    border-radius: 20px;
+    background-color: #e6f4ff;
+    outline: none;
+    padding: 10px 20px;
+    &:focus {
+      outline: black 1px solid;
+    }
+  }
+  &:nth-child(2n) {
+    margin: 10px 0;
+  }
+}

@@ -1,0 +1,121 @@
+.header {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 1000;
+  > section {
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+  .menu {
+    a {
+      display: inline-block;
+      padding: 0 20px;
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      .isActive {
+        text-decoration: underline;
+      }
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    > ul {
+      > li {
+        position: relative;
+        > a {
+          line-height: 80px;
+        }
+        &:hover {
+          .headerDrop {
+            display: block;
+          }
+        }
+        .headerDrop {
+          background-color: #fff;
+          position: absolute;
+          z-index: 1000;
+          top: 100%;
+          left: 0;
+          display: none;
+          > ul {
+            box-shadow: 1px 6px 8px 0px #8c8c8c;
+            border-bottom: 2px solid #b81f32;
+            padding: 20px;
+            width: 200px;
+
+            a {
+              display: inline-block;
+              font-size: 16px;
+              color: #333;
+              text-transform: none;
+              font-weight: 400;
+              width: 100%;
+              padding: 8px 0;
+              &:hover {
+                color: #b81f32;
+                text-decoration: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .search {
+    width: 90px;
+    background-color: #b81f32;
+    .iconSearch {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      cursor: pointer;
+      svg {
+        color: #fff;
+      }
+    }
+    &:hover {
+      .inputSearch {
+        display: block;
+        input {
+          &::placeholder {
+            color: #fff;
+            font-size: 15px;
+          }
+          color: #fff;
+          background-color: #b81f32;
+          padding: 8px;
+        }
+      }
+    }
+    .inputSearch {
+      display: none;
+    }
+  }
+}
+
+.mobileHeader {
+  background-color:#fff;
+  margin: 0 auto;
+}
+
+@media (min-width: 1200px) {
+  .wrapHeader {
+    width: 1200px;
+  }
+}
+@media (min-width: 992px) {
+  .wrapHeader {
+    width: 970px;
+  }
+}
+@media (min-width: 768px) {
+  .wrapHeader {
+    width: 750px;
+  }
+}

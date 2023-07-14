@@ -1,0 +1,11 @@
+.show {
+  width: 320px;
+  transition: width 0.3s;
+  overflow: hidden;
+}
+
+.hide {
+  width: 0;
+  transition: width 0.3s;
+  overflow: hidden;
+}

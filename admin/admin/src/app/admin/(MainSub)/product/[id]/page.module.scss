@@ -1,0 +1,48 @@
+.ProductDetail {
+  p{
+    margin: 0;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    li {
+      min-width: 100px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.158);
+      border: gray 2px solid;
+      cursor: default;
+      font-size: 20px;
+      animation: appear 0.25s;
+      @keyframes appear {
+        0% {
+          opacity: 0;
+        }
+        25% {
+        }
+        50% {
+        }
+        100% {
+          opacity: 100;
+        }
+      }
+    }
+  }
+  .wrapProduct {
+    display: flex;
+    .wrapProductImg {
+      background-color: rgb(216, 216, 216);
+      display: inline-block;
+      background-image: url("https://upload.wikimedia.org/wikipedia/commons/8/8d/Folding_table.jpg");
+      background-position: center;
+      align-items: center;
+      border-radius: 10px;
+      box-shadow: 5px 5px 10px 5px rgb(117, 117, 117);
+    }
+    .wrapDetail {
+      margin-left: 20px;
+      font-size: 25px;
+    }
+  }
+}

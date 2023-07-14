@@ -1,0 +1,33 @@
+.topHeader {
+    display: flex;
+    justify-content: right;
+    padding: 10px 0;
+    position: relative;
+    >div {
+        display: flex;
+        .account {
+            font-weight: 600;
+                color: #000;
+                cursor: pointer;
+                &:hover {
+                    color: #45661a;
+                }
+        }
+        .cart {
+            margin-left: 20px;
+            span {
+                display: block;
+                padding: 8px 16px;
+                border: 1px solid #45661a;
+                border-radius: 4px;
+                font-weight: 600;
+                color: #000;
+                cursor: pointer;
+                &:hover {
+                    background-color: #45661a;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

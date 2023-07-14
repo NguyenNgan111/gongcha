@@ -1,0 +1,186 @@
+USER
+    - regist
+        POST:
+        path: "/user/regist"
+        body: Object
+        ex: 
+            {
+                "phone":"123",
+                "pwd":"123"
+            }
+    - login
+        POST:
+        path: "/user/login"
+        body: Object
+        ex: 
+            {
+                "phone":"123",
+                "pwd":"123"
+            }
+    - change pwd
+        PUT:
+        path: "/user"
+        body: Object
+        ex:
+            {
+                "oldPwd": "123",
+                "newPwd": "123"
+            }
+        headers: "Bearer Token ${access token}"
+        auth: user
+CART
+    - get cart
+        GET:
+        path: "/cart"
+        body:
+        ex:
+        headers: "Bearer Token ${access token}"
+        auth: user
+    - add to cart
+        POST:
+        path: "/cart"
+        body: Object
+        ex: 
+            {
+                "idProduct":"6495595652eb673ce5f818ae",
+                "quantity": 1,
+                "size": "M"
+            }
+        headers: "Bearer Token ${access token}"
+        auth: user
+    - update cart
+        PUT:
+        path: "/cart"
+        body: Object
+        ex: 
+            {
+                "idCartList":"6495595652eb673ce5f818ae",
+                "quantity": 1,
+            }
+        headers: { Authorization: `Bearer ${token}` }
+        auth: user
+    - delete cart
+        DELETE:
+        path: "/cart"
+        body: Object
+        ex: 
+            {
+                "idCartList":"6495595652eb673ce5f818ae"
+            }
+        headers: { Authorization: `Bearer ${token}` }
+        auth: user
+ORDER 
+    - create order
+        POST:
+        path: "/user/order"
+        body: Array
+        ex: 
+            {
+                "detailOrder":
+                [
+                    {
+                        "idProduct" : "6492ad5a53b25403ab0efdb0",
+                        "quantityProduct" : 2,
+                        "price": "20000"
+                    }
+                ]
+            }
+        headers: { Authorization: `Bearer ${token}` }
+        auth: user
+    - get order
+        GET:
+        path: "/user/order"
+        headers: { Authorization: `Bearer ${token}` }
+        auth: user
+ADMIN
+    - login
+        POST:
+        path: "/admin/login"
+        body: Object
+        ex:
+            {
+                "phone": "12345",
+                "pwd": "12345"
+            }
+    - update role user
+        PUT:
+        path: "/admin/user"
+        body: Object
+        ex: 
+            {
+                "id": "64a23e7915117e63f1531c3a",
+                "newRole": "admin"
+            }
+        headers: { Authorization: `Bearer ${token}` }
+        auth: admin
+PRODUCT
+    - get product
+        GET:
+        path: "/products"
+    - get product for admin page
+        GET
+        path: "/admin/product"
+        headers: { Authorization: `Bearer ${token}` }
+        auth: admin
+    - get product by id
+        GET
+        path: "/products/:id"
+    - create product
+        POST:
+        path: "/admin/products"
+        body: Object
+        ex:
+           {
+                "name": "Tra sua ngan2 lam",
+                "description": "san xuat tai phap",
+                "discount": "10%",
+                "type": 
+                    [
+                        { "size": "M", "price": "10000" }
+                    ],
+                "url": "https://gongcha.com.vn/wp-content/uploads/2018/08/Strawberry-Earl-grey-latte.png",
+                "category": "cold",
+                "year": "2023",
+                "bought": 0
+            }
+        headers: { Authorization: `Bearer ${token}` }
+        auth: admin
+    - update product:
+        PUT:
+        path: "/admin/products"
+        body: Object
+        ex:
+           {
+                "idProduct": "6495595652eb673ce5f818ae",
+                "name": "Tra sua ngan2 lam",
+                "description": "san xuat tai phap",
+                "discount": "10%",
+                "type": 
+                    [
+                        { "size": "M", "price": "10000" }
+                    ],
+                "url": "https://gongcha.com.vn/wp-content/uploads/2018/08/Strawberry-Earl-grey-latte.png",
+                "category": "cold",
+                "year": "2023"
+            }
+        headers: { Authorization: `Bearer ${token}` }
+        auth: admin
+    - delete product:
+        DELETE:
+        path: "/admin/products"
+        body: Object
+        ex:
+           {
+                "idProduct": "6495595652eb673ce5f818ae"
+            }
+        headers: { Authorization: `Bearer ${token}` }
+        auth: admin
+DASHBOARD
+    - get dashboard 
+        GET:
+        path: "/dashboard"
+        headers: { Authorization: `Bearer ${token}` }
+-------------------------------------------------------------------------------------------------------
+//  "test": "echo \"Error: no test specified\" && exit 1",
+
+        

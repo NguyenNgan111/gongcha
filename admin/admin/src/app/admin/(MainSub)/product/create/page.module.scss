@@ -1,0 +1,31 @@
+.Form {
+  .wrapTypes {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    li {
+      min-width: 100px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.158);
+      border: gray 2px solid;
+      cursor: default;
+      font-size: 20px;
+      animation: appear 0.25s;
+      @keyframes appear {
+        0% {
+          opacity: 0;
+
+        }
+        25% {
+        }
+        50% {
+        }
+        100% {
+          opacity: 100;
+
+        }
+      }
+    }
+  }
+}
